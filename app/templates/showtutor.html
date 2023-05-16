@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<table  class="table text-center ">
+    <h2 align="center" style="margin-top: 40px;">Tutor Details</h2>
+    <tr style="margin-top: 40px;">
+        <th>Tutors Name</th>
+        <th>Address</th>
+        <th>Subject</th>
+        <th>phone</th>
+        <th>class</th>
+        <th>Students</th>
+        <th>Image</th>
+        
+
+        <th>Action</th>
+       
+        <!-- <th>Action</th> -->
+    </tr>
+    {% for p in tut %}
+   <tr>
+        <td>{{p.name}}</td>
+        <td>{{p.address}}</td>
+        <td>{{p.subject}}</td>
+        
+        <td>{{p.phone}}</td>
+        <td>{{p.category.category_name}}</td>
+        {% for p in tut %}
+        
+
+        
+        {% if p.image == 'static/image/default.png' %}  
+                
+                    <td><img src="{% static 'image/default.png' %}" class="w-25" style="width:60px ; height: 90px;" ></td>
+                {% else %}
+                    <td><img src="{{ p.image.url }}" class="w-25" style="width:70px ; height: 80px;"></td>
+                {% endif %}
+        <td>
+            <a href="{% url 'edit_tutor_page' p.id %}"class="btn btn-warning" >Edit</a>
+           <a href="{% url 'delete_tutors' p.id %}"class="btn btn-danger" >Delete</a></td>
+       
+   
+       
+         <!-- <td><a href="" class="btn btn-warning">Edit</a> -->
+        <!--<a href=""class="btn btn-danger" >Delete</a></td> -->
+        
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+{% endblock %}
+
+
+
+
+
+
+

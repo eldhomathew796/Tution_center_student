@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+<div style="margin-bottom: 60px;">
+    <center><h1 class="" style="margin-top: 80px;">Add Tutor</h1></center>
+  </div>
+  
+  <div class="container" style="border-radius: 10px; width:100%; margin-right:240px ;margin-top: -80px;" >
+   <form action="{% url 'addTutors' %}" method="post" class="form pt-5 pb-5" style="width: 30%; margin-left:32%" enctype="multipart/form-data">
+       {% csrf_token %}
+  
+       <input type="text" name="name" class="form-control" placeholder="tutor Name"><br>
+       <input type="text" name="address"class="form-control" placeholder="address"><br>
+       <input type="text" name="phone" class="form-control" placeholder="phone"><br>
+       <input type="text" name="subject" class="form-control" placeholder="subject"><br>
+       <select class="form-control w-100" name="category">
+        <option value="">Select category</option><br>
+        {% for c in catgrs %}
+        <option value="{{c.id}}" >{{c.category_name}}</option><br>
+        {% endfor %}
+        </select><br>
+       <input type="file" name="file" class="form-control" required accept="image/*"><br>
+      
+       
+    
+       
+       <button type="submit" class="btn btn-info" style="margin-left: 40%;">Submit</button>
+       <br>
+       
+   </form>
+  </div></body>
+  {% endblock %}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+
+<div >
+  <center><h1 class="" style="margin-top: 80px;">Signup</h1></center>
+</div>
+<div class="container text-center">
+  {% for message in messages %}
+<h5>
+  <div class="alert alert-danger mt-5" style="width: 50%;">
+      {{ message }}
+  </div>
+</h5>
+  {% endfor %}
+</div>
+<div class="container" style="border-radius: 10px; width:100%; margin-right:240px ;margin-top: -80px;" >
+ <form action="{% url 'usercreate' %}" method="post" class="form pt-5 pb-5" style="width: 30%; margin-left:32%" enctype="multipart/form-data">
+     {% csrf_token %}
+
+     <input type="text" name="first_name" class="form-control" placeholder="First Name"><br>
+     <input type="text" name="last_name"class="form-control" placeholder="Last Name"><br>
+     <input type="text" name="username" class="form-control" placeholder="Username"><br>
+     <input type="email" name="email" class="form-control" placeholder="Email"><br>
+     <input type="file" name="image" class="form-control" required accept="image/*"><br>
+     <select class="form-control w-100" name="category">
+      <option value="">Select Class</option><br>
+      {% for c in catgrs %}
+      <option value="{{c.id}}" >{{c.category_name}}</option><br>
+      {% endfor %}
+      </select><br>
+     
+     <input type="password" name="password" class="form-control" placeholder="Strong Password"><br>
+     <input type="password" name="cpassword" class="form-control" placeholder="Conform Password"><br>
+     
+     <button type="submit" class="btn btn-info" style="margin-left: 40%;">Submit</button>
+     <br>
+     <p class='text-muted'>Already a member. <a href="{% url 'loginpage' %}">Login</a></p>
+ </form>
+</div></body>
+{% endblock %}

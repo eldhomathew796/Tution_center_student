@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+    
+    
+   
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card" style="border:2px ;">
+                    <div class="card-header">
+                      <b>Standerds</b>
+                    </div>
+                    
+                    <ul class="list-group list-group-flush">
+                      <li class="list-group-item">
+                          <a href="{% url 'gallery' %}">
+                              All
+                          </a>
+                        </li>
+
+                      {% for c in catgrs %}
+                      <li class="list-group-item">
+                        <a href="{% url 'gallery' %}?category={{ c.category_name }}">
+                            {{ c.category_name }}
+                        </a>
+                      </li>
+                      {% endfor %}
+
+                      <li class="list-group-item">
+                          <a href="{% url 'addimage' %}" class="btn btn-block btn-dark btn-sm m-1" role="button">
+                              Add Notes
+                          </a>
+                      </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-9" >
+                <div class="row">
+
+                    {% for i in imgs %}
+                    <div class="col-md-4">
+                        <div class="card" style="border: 5px;">
+                            <img class="images-sty"
+                             src="{{ i.image.url }}"
+                              alt="Bag image">
+                          <center><div class="card-body">
+                              <p class="card-text" style="margin-top:-25px ;">
+                                <strong> {{ i.product_price }}<br>
+                                  {{ i.subject }}<br></strong>
+                                  Class{{ i.category.category_name }}
+                              </p>
+                            </div></center>
+                            
+                          </div>
+                    </div>
+                    {% empty %}
+                    <h3>No photos</h3>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock%}

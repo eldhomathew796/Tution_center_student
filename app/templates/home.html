@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div id="demo" class="carousel slide" data-ride="carousel" >
+
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+      <li data-target="#demo" data-slide-to="0" class="active"></li>
+         <li data-target="#demo" data-slide-to="1"></li>
+    </ul>
+  
+    <!-- The slideshow -->
+          <div class="carousel-inner">
+      <div class="carousel-item active">
+  
+        <img src="https://cdn1.byjus.com/wp-content/uploads/2022/03/btc_home_banner_web2.webp" class="img-fluid" width="1450" height="300px" style="object-fit:cover;">
+          </div>
+      <div class="carousel-item">
+        <img src="https://cdn1.byjus.com/wp-content/uploads/2022/03/btc_home_banner_web4.webp" class="img-fluid"  width="1450" height="200px">
+      </div>
+      <div class="carousel-item">
+        <img src="https://cdn1.byjus.com/wp-content/uploads/2022/03/btc_home_banner_web1.webp"  class="img-fluid" height="200px" width="1450">
+      </div>
+  
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </a>
+    <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </a>
+  </div>
+  </div>
+  <div class="container banner-content-box">
+    <div class="book-counselling-section">
+    
+    <p class="upgrade-performance-text">Upgrade Your Child's Academic Performance</p>
+    <div class="counselling-btn-div"><button class="counselling-btn" id="home-btn"><a href="{% url 'signup'%}" style="color:#ffff;">Register</a></button></div>
+    </div>
+    </div>
+  <section>
+      <div>
+          <center><h1 style="color:#064063;  font-weight: bold; letter-spacing: 0.77px; font-family: Roboto; margin-top: 110px;">Welcome to a new way of learning</h1></center>
+          <div class="blc-section-heading-border"></div>
+          <p class="below-heading-text" style="margin-top: 30px;">
+            BYJU’S Tuition Centre is a network of tech-enabled classroom
+            centres spread<br> throughout the country with an aim to transform the future<br> of learning.
+            </p>
+      </div>
+      
+  </section>
+  
+
+
+  
+      
+ 
+  
+  <!---Footer------>
+  
+  
+  <footer style="margin-top:70px">
+  <div class="jumbotron text-center" style="font-size: 13px;">
+      <div class="row">
+          <div class="col-sm-3">
+              <p>ABOUT</p>
+            <strong><p>
+  Contact Us<br>
+  About Us<br>
+  Careers<br>
+  Flipkart Stories<br>
+  Press<br>
+  Flipkart Wholesale<br>
+  Corporate Information</p></strong>
+          </div>
+          <div class="col-sm-3">
+              <p>HELP</p>
+              <strong><p>
+  Payments<br>
+  Shipping<br>
+  Cancellation & Returns<br>
+  FAQ<br>
+  Report Infringement</p></strong>
+          </div>
+          <div class="col-sm-3">
+              <p>POLICY</p>
+              <strong><p>
+  Return Policy<br>
+  Terms Of Use<br>
+  Security<br>
+  Privacy<br>
+  Sitemap<br>
+  EPR Compliance</p></strong>
+          </div>
+          <div class="col-sm-3">
+              <p>SOCIAL</p>
+              <strong><p>
+  Facebook<br>
+  Twitter<br>
+                  YouTube</p></strong></div>
+  
+  
+          </div>
+          </div>
+      </div>
+  </footer>  
+  </body>
+
+  
+{% endblock %}
